@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def indexPage(request):
+    context ={
+
+    }
+    return render(request , 'core/indexPage.html' , context)
