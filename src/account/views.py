@@ -3,8 +3,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login , logout
 from django.contrib.auth.models import User
 
-# from django.contrib.auth.decorators import login_required
-# from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 
 from .forms import UserRegisterForm
 
@@ -47,7 +47,7 @@ def logoutPage(request):
     return redirect('index_page')
 
 
-# @login_required(login_url='login_page')
+@login_required(login_url='login_page')
 def userPage(request, pk):
     user = User.objects.get(id = pk)
     context={
