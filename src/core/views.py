@@ -1,10 +1,13 @@
 from django.shortcuts import render
 
 
+from .models import Post
+
 def indexPage(request):
+    post = Post.objects.all()
     context ={
-        'title' : 'Blog'
-        # 'posts' : post,
+        'title' : 'Blog',
+        'posts' : post,
     }
     return render(request , 'core/indexPage.html' , context)
 
